@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Same page Different Stylesheets</title>
+    <link id="theme-style" rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="header">
+        <h1>Welcome to My Homepage</h1>
+        <p>Use the menu to select different Stylesheets</p>
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <button onclick="changeStyle('style1.css')">Stylesheet 1</button>
+            <button onclick="changeStyle('style2.css')">Stylesheet 2</button>
+            <button onclick="changeStyle('style3.css')">Stylesheet 3</button>
+            <button onclick="changeStyle('')">No Stylesheet</button>
+    </div>
+
+    <div class="main-content">
+        <h2>Same page Different Stylesheets</h2>
+        <p>
+            This is an example showing how different stylesheet change
+            the layout of your HTML page. You can change the layout of 
+            this page by selecting one of the following links: 
+        </p>
+
+        <p>
+            <a href="#" onclick="changeStyle('style1.css')">Stylesheet 1</a>,
+            <a href="#" onclick="changeStyle('style2.css')">Stylesheet 2</a>,
+            <a href="#" onclick="changeStyle('style3.css')">Stylesheet 3</a>,
+        </p>
+
+        <div class="extra-box">
+            <h3>No styles</h3>
+            <p>
+                This page uses DIV elements to group different sections
+                of the HTML page.
+                Click here to see how the page looks like with no stylesheet.
+                <a href="#" onclick="changeStyle('')">No Stylesheet</a>,
+            </p>
+        </div>
+    </div>
+    <script>
+        function changeStyle(sheetPath){
+            document.getElementById('theme-style').setAttribute('href',sheetPath);
+
+        }
+    </script>
+
+</body>
+</html>
